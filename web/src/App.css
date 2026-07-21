@@ -1,0 +1,257 @@
+:root,
+[data-theme="light"] {
+  --bg: #f7f7f8;
+  --panel: #ffffff;
+  --text: #0e0e10;
+  --muted: #6b6b73;
+  --border: #e6e6ea;
+  --accent: #4f46e5;
+  --accent-contrast: #ffffff;
+  --user-bg: #4f46e5;
+  --user-text: #ffffff;
+  --assistant-bg: #ffffff;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] {
+  --bg: #0d0d12;
+  --panel: #16161d;
+  --text: #ececf1;
+  --muted: #9a9aa5;
+  --border: #26262f;
+  --accent: #7c73ff;
+  --accent-contrast: #0d0d12;
+  --user-bg: #4f46e5;
+  --user-text: #ffffff;
+  --assistant-bg: #16161d;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.brand-mark {
+  color: var(--accent);
+  font-size: 1.25rem;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.model-count {
+  font-size: 0.8rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+
+.chat {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.empty {
+  max-width: 40rem;
+  margin: auto;
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+}
+
+.empty h2 {
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.thread {
+  width: 100%;
+  max-width: 46rem;
+  padding: 1.5rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.turn {
+  display: flex;
+  flex-direction: column;
+}
+
+.turn.user {
+  align-items: flex-end;
+}
+
+.turn.assistant {
+  align-items: flex-start;
+}
+
+.bubble {
+  max-width: 85%;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.55;
+  box-shadow: var(--shadow);
+}
+
+.turn.user .bubble {
+  background: var(--user-bg);
+  color: var(--user-text);
+  border-bottom-right-radius: 4px;
+}
+
+.turn.assistant .bubble {
+  background: var(--assistant-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-bottom-left-radius: 4px;
+}
+
+.thinking {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.sources {
+  margin-top: 0.4rem;
+  max-width: 85%;
+}
+
+.sources-toggle {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0.2rem 0;
+}
+
+.sources-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.source {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  background: var(--panel);
+}
+
+.source.fail {
+  opacity: 0.7;
+}
+
+.source-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.source-label {
+  font-weight: 600;
+}
+
+.source-meta {
+  color: var(--muted);
+}
+
+.source-body {
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  color: var(--text);
+}
+
+.composer {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+  padding: 0.75rem 1rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--panel);
+  max-width: 46rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.composer textarea {
+  flex: 1;
+  resize: none;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.7rem 0.9rem;
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  max-height: 10rem;
+}
+
+.composer textarea:focus {
+  outline: 2px solid var(--accent);
+  border-color: transparent;
+}
+
+.composer button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.7rem 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.composer .send {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.composer .send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.composer .stop {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
