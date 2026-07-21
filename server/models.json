@@ -1,0 +1,73 @@
+{
+  "models": [
+    {
+      "id": "mock:alpha",
+      "label": "Mock Alpha",
+      "provider": "mock",
+      "model": "mock-alpha"
+    },
+    {
+      "id": "mock:beta",
+      "label": "Mock Beta",
+      "provider": "mock",
+      "model": "mock-beta"
+    },
+    {
+      "id": "mock:gamma",
+      "label": "Mock Gamma",
+      "provider": "mock",
+      "model": "mock-gamma"
+    },
+    {
+      "id": "mock:judge",
+      "label": "Mock Judge",
+      "provider": "mock",
+      "model": "mock-judge",
+      "judge": true
+    },
+    {
+      "id": "openrouter:llama",
+      "label": "Llama 3.1 8B (free)",
+      "provider": "openrouter",
+      "model": "meta-llama/llama-3.1-8b-instruct:free"
+    },
+    {
+      "id": "openrouter:qwen",
+      "label": "Qwen 2.5 7B (free)",
+      "provider": "openrouter",
+      "model": "qwen/qwen-2.5-7b-instruct:free"
+    },
+    {
+      "id": "openrouter:gemma",
+      "label": "Gemma 2 9B (free)",
+      "provider": "openrouter",
+      "model": "google/gemma-2-9b-it:free"
+    },
+    {
+      "id": "openrouter:judge",
+      "label": "Llama 3.3 70B Judge (free)",
+      "provider": "openrouter",
+      "model": "meta-llama/llama-3.3-70b-instruct:free",
+      "judge": true
+    },
+    {
+      "id": "ollama:llama",
+      "label": "Ollama llama3",
+      "provider": "ollama",
+      "model": "llama3"
+    },
+    {
+      "id": "ollama:qwen",
+      "label": "Ollama qwen2",
+      "provider": "ollama",
+      "model": "qwen2"
+    },
+    {
+      "id": "ollama:judge",
+      "label": "Ollama Judge (mistral)",
+      "provider": "ollama",
+      "model": "mistral",
+      "judge": true
+    }
+  ]
+}
